@@ -35,6 +35,12 @@ class MoviesTableViewController: UITableViewController {
         }
     }
     
+    //prepara a proxima tela
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MovieViewController
+        vc.movie = dataSource[tableView.indexPathForSelectedRow!.row]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
